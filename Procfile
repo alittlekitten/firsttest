@@ -1,0 +1,1 @@
+web: gunicorn boardmakingprj.wsgi --log-file -
