@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+        {% load staticfiles %}
+        <div class="container jumbotron">
+            <h1>{{portfolio.title}}</h1>
+            <p><img src="{{portfolio.image.url}}" height=500px width=500px alt=""></p>
+            <p>{{portfolio.description}}</p>
+            <a href="{% url 'portfolio' %}">포트폴리오로</a>
+        </div>
+        <footer class="text-muted">
+          <hr>
+            <div class="container">
+              <p>※ 이 포트폴리오의 저작권은 Likelion과 멋쟁이사자처럼 7기 오석호 회원에게 있습니다.</p>
+            </div>
+        </footer>
+</body>
+</html>
+
+{% endblock %}

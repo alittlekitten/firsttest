@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<br>
+
+<h1>회원가입</h1>
+
+<form method="POST" action="{% url 'signup' %}"> <!-- POST로 전송하면 데이터가 url을 통해 날아다니지 않는다! ( 데이터 생성할때 씀 )-->
+
+{% csrf_token %} <!-- 이건 장고가 보안을 위해 제공하는 기능이다!-->
+    아이디:
+    <br>
+    <input name="username" type="text" value="">
+    <br>
+    비밀번호:
+    <br>
+    <input name="password1" type="password" value="">
+    <br>
+    비밀번호 확인:
+    <br>
+    <input name="password2" type="password" value="">
+    <br>
+    <br>
+    <input class="btn btn-primary" type="submit" value="회원가입 완료">
+</form>
+
+<br>
+{% if error %}
+{{ error }}
+<br>
+<br>
+{% endif %}
+
+{% endblock %}
